@@ -1,42 +1,53 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-  align-items: start;
+  display: flex;
+  align-items: center;
   justify-items: center;
+  /* height: 100vh; */
 }
 
 #hero {
   background-color: rgb(255, 255, 255);
-  height: 500px;
-  width: 900px;
-  margin: 60px 50px;
-  padding: 30px 50px;
+  height: 600px;
+  width: 500px;
+  margin: 60px 0px;
+  padding: 15px 50px;
   border: 2px solid #7d7d7d;
   box-shadow: 5px 5px 7px #7d7d7d;
 }
 
 img {
   padding-bottom: 25px;
+  width: 125px;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
+  padding-bottom: 10px;
 }
 
 #desc {
-  padding: 0px 100px;
+  padding: 10px 20px 10px 0;
   font-size: 1.1rem;
 }
 
-#fput {
-  padding: 0px 100px;
-}
-
 #status {
-  padding: 0px 100px;
+  padding: 10px 20px 10px 0;
 }
 
 #status p:nth-child(1) {
   font-size: 1.3rem;
+}
+
+#fput {
+  padding: 5px 0px 0px 0px;
 }
 
 .highlight {
@@ -58,7 +69,7 @@ h1 {
 #start, #refresh {
   color: white;
   margin: 5px 0px;
-  padding: 5px 10px;
+  padding: 5px 5px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
