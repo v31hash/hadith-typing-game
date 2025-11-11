@@ -99,7 +99,7 @@ h1 {
 
 @media (max-width: 525px) {
   #start, #refresh {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
 
