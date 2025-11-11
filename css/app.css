@@ -91,6 +91,12 @@ h1 {
   margin-left: 2.5px;
 }
 
+@media (max-width: 525px) {
+  *, #start, #refresh {
+    font-size: 0.8em;
+  }
+}
+
 /* defines shake animation */
 @keyframes shake {
   0% {
