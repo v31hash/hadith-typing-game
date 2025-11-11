@@ -1,11 +1,11 @@
 const quotes = [
-    'When you have eliminated the impossible, whatever remains, however improbable, must be the truth.',
-    'There is nothing more deceptive than an obvious fact.',
-    'I ought to know by this time that when a fact appears to be opposed to a long train of deductions it invariably proves to be capable of bearing some other interpretation.',
-    'I never make exceptions. An exception disproves the rule.',
-    'What one man can invent another can discover.',
-    'Nothing clears up a case so much as stating it to another person.',
-    'Education never ends, Watson. It is a series of lessons, with the greatest for the last.',
+    "Verily all actions are based on your intentions, and everyone will get what was intended.",
+    "He who innovates into Islam that which is not of it will have it rejected.",
+    "What I have forbidden for you, avoid. What I have ordered you, do as much of it as you can. For verily, it was only their excessive questioning and disagreeing with their Prophets that destroyed who were before you.",
+    "Leave what makes you doubtful for what does not.",
+    "Part of the perfection of one's Islam is his leaving that which does not concern him.",
+    "None of you truely believes until you love for your brother what you love for yourself.",
+    "There is none amongst the Muslims who plants a tree or sows seeds, and then a bird, or a person or an animal eats from it, but is regarded as a charitable gift for him.",
 ];
 
 // array for storing the words of the current challenge
