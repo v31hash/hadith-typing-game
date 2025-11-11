@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+
+  <body>
+    <h1>Typing Game</h1>
+    <!-- random quote will be inserted here -->
+    <div>Practice your typing skills with a quote from Sherlock Holmes. Click **start** to begin!</div>
+
+    <p id="quote"></p>
+    <!-- status update will show here -->
+    <p id="message"></p>
+
+    <!-- input field -->
+    <div>
+      <!-- type your response here -->
+      <input type="text" aria-label="current word" id="typed-value">
+      <!-- starts the the timer -->
+      <button type="button" id="start">Start</button>
+      <button id="refresh" onclick="location.reload();">Refresh</button>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

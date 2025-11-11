@@ -1,0 +1,64 @@
+
+.highlight {
+  background-color: #ffff00;
+}
+
+/* defines the error class with styling (defined in script file)*/
+.error {
+  background-color: #ffe6e6;
+  border: 2px solid #ff0000;
+  animation: shake 0.5s;
+  animation-iteration-count: 3;
+}
+
+#typed-value {
+  /* border-radius: 2px; */
+}
+
+#start, #refresh {
+  color: white;
+  margin: 5px 0px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+#start {
+  /* visibility: hidden; */
+  background-color: #4d1acc;
+  margin-left: 5px;
+  margin-right: 2.5px;
+}
+
+#refresh {
+  /* visibility: hidden; */
+  background-color: #4CAF50;
+  margin-left: 2.5px;
+}
+
+/* defines shake animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
