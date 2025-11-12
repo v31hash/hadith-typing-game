@@ -7,6 +7,12 @@ const quotes = [
     "None of you truely believes until you love for your brother what you love for yourself.",
     "There is none amongst the Muslims who plants a tree or sows seeds, and then a bird, or a person or an animal eats from it, but is regarded as a charitable gift for him.",
     "this is not a hadith, 13sec or less",
+    "All drinks that intoxicate are unlawful.",
+    "The one providing water for people is the last of them to drink.",
+    "The Messenger of Allah would repeat a statement three times so that it could be understood.",
+    "O you people False witness is tantamount to Shirk with Allah",
+    "The best of witnesses is the one who gives his testimony before being asked for it.",
+    "Shall l not inform you of the best of witnesses? The one who comes with his testimony before being asked for it.",
 ];
 
 // array for storing the words of the current challenge
