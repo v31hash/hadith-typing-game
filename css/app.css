@@ -63,7 +63,7 @@ h1 {
 }
 
 #typed-value {
-  /* border-radius: 2px; */
+  width: 170px;
 }
 
 #start, #refresh {
