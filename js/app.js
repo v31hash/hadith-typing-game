@@ -23,9 +23,9 @@ let wordIndex = 0;
 let startTime = Date.now();
 
 // grabs page elements (from html)
-const quoteElement = document.getElementById('quote');
-const messageElement = document.getElementById('message');
-const typedValueElement = document.getElementById('typed-value');
+const quoteElement = document. querySelector('#quote');
+const messageElement = document.querySelector('#message');
+const typedValueElement = document.querySelector('#typed-value');
 
 document.getElementById('start').addEventListener('click', function () {
   // selects a random quote
