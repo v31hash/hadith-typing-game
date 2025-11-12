@@ -24,7 +24,6 @@ body {
 
 img {
   padding-bottom: 25px;
-  width: 125px;
 }
 
 h1 {
@@ -101,6 +100,9 @@ h1 {
   }
   #start, #refresh {
     font-size: 10px;
+  }
+  img {
+    width: 125px;
   }
 }
 
