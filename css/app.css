@@ -63,7 +63,7 @@ h1 {
 }
 
 #typed-value {
-  width: 170px;
+  font-size: 16px;
 }
 
 #start, #refresh {
