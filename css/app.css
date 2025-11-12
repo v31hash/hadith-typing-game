@@ -93,14 +93,14 @@ h1 {
 }
 
 @media (max-width: 525px) {
-  * {
-    font-size: 0.8em;
+  p {
+    font-size: 1em;
   }
-}
-
-@media (max-width: 525px) {
+  h1 {
+    font-size: 1.7em;
+  }
   #start, #refresh {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
