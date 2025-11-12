@@ -6,6 +6,7 @@ const quotes = [
     "Part of the perfection of one's Islam is his leaving that which does not concern him.",
     "None of you truely believes until you love for your brother what you love for yourself.",
     "There is none amongst the Muslims who plants a tree or sows seeds, and then a bird, or a person or an animal eats from it, but is regarded as a charitable gift for him.",
+    "this is not a hadith, 10sec or less",
 ];
 
 // array for storing the words of the current challenge
