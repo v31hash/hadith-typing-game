@@ -1,4 +1,4 @@
-const QUOTES = [
+const quotes = [
     "Verily all actions are based on your intentions, and everyone will get what was intended.",
     "He who innovates into Islam that which is not of it will have it rejected.",
     "What I have forbidden for you, avoid. What I have ordered you, do as much of it as you can. For verily, it was only their excessive questioning and disagreeing with their Prophets that destroyed who were before you.",
@@ -6,7 +6,7 @@ const QUOTES = [
     "Part of the perfection of one's Islam is his leaving that which does not concern him.",
     "None of you truely believes until you love for your brother what you love for yourself.",
     "There is none amongst the Muslims who plants a tree or sows seeds, and then a bird, or a person or an animal eats from it, but is regarded as a charitable gift for him.",
-    "this is not a hadith, 13sec or less",
+    "This is not a hadith, 13sec or less",
     "All drinks that intoxicate are unlawful.",
     "The one providing water for people is the last of them to drink.",
     "The Messenger of Allah would repeat a statement three times so that it could be understood.",
@@ -21,16 +21,31 @@ let words = [];
 let wordIndex = 0;
 // sets the cuurent time as a variable (will be set on start)
 let startTime = Date.now();
+// event listener: timer
+//let headerTimer = setInterval(swapImage, 5000); // 5000 = 5sec
+let countImg = 1; // 1 is for first image
 
 // grabs page elements (from html)
-const QUOTE_ELEMENT = document. querySelector('#quote');
-const MESSAGE_ELEMENT = document.querySelector('#message');
-const TYPED_VALUE_ELEMENT = document.querySelector('#typed-value');
+let header = document.querySelector('header');
+const quoteElement = document. querySelector('#quote');
+const messageElement = document.querySelector('#message');
+const typedValueElement = document.querySelector('#typed-value');
 
+function swapImage() {
+  //count = count + 1; // old way
+  countImg++; // new way
+  header.setAttribute('style', 'background: url(assets/images/header' + countImg + '.png);');
+
+  if (countImg === 5) {
+    countImg = 0;
+  }
+} // swapImage
+
+// event listener: listens for left mouse-click
 document.getElementById('start').addEventListener('click', function () {
   // selects a random quote
-  const QUOTE_INDEX = Math.floor(Math.random() * QUOTES.length);
-  const QUOTE = QUOTES[QUOTE_INDEX];
+  const quoteIndex = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[quoteIndex];
   // splits the quote by word and puts them into an array
   words = quote.split(' ');
   // resets word index for tracking
@@ -38,13 +53,13 @@ document.getElementById('start').addEventListener('click', function () {
 
   // UI updates
   // creates an array of span elements so it can assign a class
-  const SPAN_WORDS = words.map(function(word) { return `<span>${word} </span>`});
+  const spanWords = words.map(function(word) { return `<span>${word} </span>`});
   // converts above into string and inserts into inner .html on quote display with innerHTML
-  QUOTE_ELEMENT.innerHTML = SPAN_WORDS.join(''); 
+  quoteElement.innerHTML = spanWords.join(''); 
   // highlights the first word
-  QUOTE_ELEMENT.childNodes[0].className = 'highlights';
+  quoteElement.childNodes[0].className = 'highlights';
   // clears all prior messages
-  MESSAGE_ELEMENT.innerText = '';
+  messageElement.innerText = '';
 
   // setups the textbox
   // clears the textbox
@@ -59,29 +74,29 @@ document.getElementById('start').addEventListener('click', function () {
 
 typedValueElement.addEventListener('input', (e) => {
   // gets current word
-  const CURRENT_WORD = words[wordIndex];
+  const currentWord = words[wordIndex];
   // get the current value
-  const TYPED_VALUE = typedValueElement.value;
+  const typedValue = typedValueElement.value;
 
-  if (TYPED_VALUE === CURRENT_WORD && wordIndex === words.length - 1) {
+  if (typedValue === currentWord && wordIndex === words.length - 1) {
     // at the end of the sentance
     // display success message
-    const ELAPSED_TIME = new Date().getTime() - startTime;
-    const MESSAGE =`CONGRATULATIONS! You finished in ${ELAPSED_TIME / 1000} seconds.`;
-    messageElement.innerText = MESSAGE;
-  } else if (TYPED_VALUE.endsWith(' ') && TYPED_VALUE.trim() === CURRENT_WORD) {
+    const elapsedTime = new Date().getTime() - startTime;
+    const message =`CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
+    messageElement.innerText = message;
+  } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
     // at the end of the word
     // clear the typedValueElement for the new word
     typedValueElement.value = '';
     // move to the next word
     wordIndex++;
     // reset the class name for all elements in quote
-    for (const WORD_ELEMENT of QUOTE_ELEMENT.childNodes) {
-      WORD_ELEMENT.className = '';
+    for (const wordElement of quoteElement.childNodes) {
+      wordElement.className = '';
     }
     // hightlight the new word
-    QUOTE_ELEMENT.childNodes[wordIndex].className = 'highlight';
-  } else if (CURRENT_WORD.startsWith(TYPED_VALUE)) {
+    quoteElement.childNodes[wordIndex].className = 'highlight';
+  } else if (currentWord.startsWith(typedValue)) {
     // currently correct
     // highlight the next word
     typedValueElement.className = '';
