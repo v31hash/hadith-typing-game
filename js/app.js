@@ -23,7 +23,7 @@ let wordIndex = 0;
 let startTime = Date.now();
 
 // grabs page elements (from html)
-const quoteElement = document. querySelector('#quote');
+const QUOTE_ELEMENT = document. querySelector('#quote');
 const messageElement = document.querySelector('#message');
 const typedValueElement = document.querySelector('#typed-value');
 
@@ -41,9 +41,9 @@ document.getElementById('start').addEventListener('click', function () {
   // creates an array of span elements so it can assign a class
   const spanWords = words.map(function(word) { return `<span>${word} </span>`});
   // converts above into string and inserts into inner .html on quote display with innerHTML
-  quoteElement.innerHTML = spanWords.join(''); 
+  QUOTE_ELEMENT.innerHTML = spanWords.join(''); 
   // highlights the first word
-  quoteElement.childNodes[0].className = 'highlights';
+  QUOTE_ELEMENT.childNodes[0].className = 'highlights';
   // clears all prior messages
   messageElement.innerText = '';
 
@@ -77,11 +77,11 @@ typedValueElement.addEventListener('input', (e) => {
     // move to the next word
     wordIndex++;
     // reset the class name for all elements in quote
-    for (const wordElement of quoteElement.childNodes) {
+    for (const wordElement of QUOTE_ELEMENT.childNodes) {
       wordElement.className = '';
     }
     // hightlight the new word
-    quoteElement.childNodes[wordIndex].className = 'highlight';
+    QUOTE_ELEMENT.childNodes[wordIndex].className = 'highlight';
   } else if (currentWord.startsWith(typedValue)) {
     // currently correct
     // highlight the next word
