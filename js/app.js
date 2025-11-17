@@ -1,4 +1,4 @@
-const quotes = [
+const QUOTES = [
     "Verily all actions are based on your intentions, and everyone will get what was intended.",
     "He who innovates into Islam that which is not of it will have it rejected.",
     "What I have forbidden for you, avoid. What I have ordered you, do as much of it as you can. For verily, it was only their excessive questioning and disagreeing with their Prophets that destroyed who were before you.",
@@ -21,31 +21,17 @@ let words = [];
 let wordIndex = 0;
 // sets the cuurent time as a variable (will be set on start)
 let startTime = Date.now();
-// event listener: timer
-//let headerTimer = setInterval(swapImage, 5000); // 5000 = 5sec
-let countImg = 1; // 1 is for first image
 
 // grabs page elements (from html)
-let header = document.querySelector('header');
 const quoteElement = document. querySelector('#quote');
 const messageElement = document.querySelector('#message');
 const typedValueElement = document.querySelector('#typed-value');
 
-function swapImage() {
-  //count = count + 1; // old way
-  countImg++; // new way
-  header.setAttribute('style', 'background: url(assets/images/header' + countImg + '.png);');
-
-  if (countImg === 5) {
-    countImg = 0;
-  }
-} // swapImage
-
 // event listener: listens for left mouse-click
 document.getElementById('start').addEventListener('click', function () {
   // selects a random quote
-  const quoteIndex = Math.floor(Math.random() * quotes.length);
-  const quote = quotes[quoteIndex];
+  const quoteIndex = Math.floor(Math.random() * QUOTES.length);
+  const quote = QUOTES[quoteIndex];
   // splits the quote by word and puts them into an array
   words = quote.split(' ');
   // resets word index for tracking
