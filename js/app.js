@@ -1,4 +1,4 @@
-const quotes = [
+const QUOTES = [
     "Verily all actions are based on your intentions, and everyone will get what was intended.",
     "He who innovates into Islam that which is not of it will have it rejected.",
     "What I have forbidden for you, avoid. What I have ordered you, do as much of it as you can. For verily, it was only their excessive questioning and disagreeing with their Prophets that destroyed who were before you.",
@@ -23,14 +23,14 @@ let wordIndex = 0;
 let startTime = Date.now();
 
 // grabs page elements (from html)
-const quoteElement = document. querySelector('#quote');
-const messageElement = document.querySelector('#message');
-const typedValueElement = document.querySelector('#typed-value');
+const QUOTE_ELEMENT = document. querySelector('#quote');
+const MESSAGE_ELEMENT = document.querySelector('#message');
+const TYPED_VALUE_ELEMENT = document.querySelector('#typed-value');
 
 document.getElementById('start').addEventListener('click', function () {
   // selects a random quote
-  const quoteIndex = Math.floor(Math.random() * quotes.length);
-  const quote = quotes[quoteIndex];
+  const QUOTE_INDEX = Math.floor(Math.random() * QUOTES.length);
+  const QUOTE = QUOTES[QUOTE_INDEX];
   // splits the quote by word and puts them into an array
   words = quote.split(' ');
   // resets word index for tracking
@@ -38,13 +38,13 @@ document.getElementById('start').addEventListener('click', function () {
 
   // UI updates
   // creates an array of span elements so it can assign a class
-  const spanWords = words.map(function(word) { return `<span>${word} </span>`});
+  const SPAN_WORDS = words.map(function(word) { return `<span>${word} </span>`});
   // converts above into string and inserts into inner .html on quote display with innerHTML
-  quoteElement.innerHTML = spanWords.join(''); 
+  QUOTE_ELEMENT.innerHTML = SPAN_WORDS.join(''); 
   // highlights the first word
-  quoteElement.childNodes[0].className = 'highlights';
+  QUOTE_ELEMENT.childNodes[0].className = 'highlights';
   // clears all prior messages
-  messageElement.innerText = '';
+  MESSAGE_ELEMENT.innerText = '';
 
   // setups the textbox
   // clears the textbox
@@ -59,29 +59,29 @@ document.getElementById('start').addEventListener('click', function () {
 
 typedValueElement.addEventListener('input', (e) => {
   // gets current word
-  const currentWord = words[wordIndex];
+  const CURRENT_WORD = words[wordIndex];
   // get the current value
-  const typedValue = typedValueElement.value;
+  const TYPED_VALUE = typedValueElement.value;
 
-  if (typedValue === currentWord && wordIndex === words.length - 1) {
+  if (TYPED_VALUE === CURRENT_WORD && wordIndex === words.length - 1) {
     // at the end of the sentance
     // display success message
-    const elapsedTime = new Date().getTime() - startTime;
-    const message =`CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
-    messageElement.innerText = message;
-  } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
+    const ELAPSED_TIME = new Date().getTime() - startTime;
+    const MESSAGE =`CONGRATULATIONS! You finished in ${ELAPSED_TIME / 1000} seconds.`;
+    messageElement.innerText = MESSAGE;
+  } else if (TYPED_VALUE.endsWith(' ') && TYPED_VALUE.trim() === CURRENT_WORD) {
     // at the end of the word
     // clear the typedValueElement for the new word
     typedValueElement.value = '';
     // move to the next word
     wordIndex++;
     // reset the class name for all elements in quote
-    for (const wordElement of quoteElement.childNodes) {
-      wordElement.className = '';
+    for (const WORD_ELEMENT of QUOTE_ELEMENT.childNodes) {
+      WORD_ELEMENT.className = '';
     }
     // hightlight the new word
-    quoteElement.childNodes[wordIndex].className = 'highlight';
-  } else if (currentWord.startsWith(typedValue)) {
+    QUOTE_ELEMENT.childNodes[wordIndex].className = 'highlight';
+  } else if (CURRENT_WORD.startsWith(TYPED_VALUE)) {
     // currently correct
     // highlight the next word
     typedValueElement.className = '';
